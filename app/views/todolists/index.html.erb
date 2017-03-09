@@ -1,13 +1,32 @@
 <h1>You are busy!!!</h1>
 
+<ul>
 
 <% @todolists.each do |list| %>
 
-	<%= list.title %>
-	<%= link_to "Show" , todolist_path(list) %>
+	<li check_box_tag >
+	<h2><%= list.title %></h2>
+	<h3><%= list.duedate %></h3>
+	<h3><%= list.description %></h3>
+	
+
+	
+	
 	<%= link_to "Edit" , edit_todolist_path(list) %>
 
+	<%= link_to "Delete" , todolist_path(list) , method: :delete  %>
+
 	<br>
+	</li>
 <% end %>
 
+</ul>
+
 <%= link_to "Create todolist" , new_todolist_path %>
+
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
