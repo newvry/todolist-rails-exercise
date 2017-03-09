@@ -15,4 +15,8 @@ class TodolistsController < ApplicationController
 		redirect_to todolists_path
 	end
 
+	def show
+		@todolist = Todolist.find(params[:id])
+	end
+
 end

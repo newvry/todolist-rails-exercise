@@ -1,7 +1,8 @@
 
 <% @todolists.each do |list| %>
 
-<h1><%= list.title %></h1>
+	<h1><%= list.title %></h1>
+	<%= link_to "Show" , todolist_path(list) %>
 
 <% end %>
 
