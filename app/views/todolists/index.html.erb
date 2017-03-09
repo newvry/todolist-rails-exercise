@@ -1,9 +1,11 @@
 
 <% @todolists.each do |list| %>
 
-	<h1><%= list.title %></h1>
+	<%= list.title %>
 	<%= link_to "Show" , todolist_path(list) %>
+	<%= link_to "Edit" , edit_todolist_path(list) %>
 
+	<br>
 <% end %>
 
 <%= link_to "Create todolist" , new_todolist_path %>
