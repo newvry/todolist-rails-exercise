@@ -24,9 +24,3 @@
 
 <%= link_to "Create todolist" , new_todolist_path %>
 
-
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
