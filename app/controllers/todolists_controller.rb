@@ -10,9 +10,11 @@ class TodolistsController < ApplicationController
 
 	def create
 		@todolist = Todolist.new(todolist_params)
-		@todolist.save
-
-		redirect_to todolists_path
+		if @todolist.save
+		   redirect_to todolists_path
+		else
+		   render :action =>  :new
+		end
 	end
 
 	# def show
@@ -25,9 +27,11 @@ class TodolistsController < ApplicationController
 
 	def update
 		@todolist = Todolist.find(params[:id])
-		@todolist.update(todolist_params)
-
-		redirect_to todolists_path
+		if @todolist.update(todolist_params)
+		   redirect_to todolists_path
+		else
+			render :action => :edit
+		end
 	end
 
 	def destroy

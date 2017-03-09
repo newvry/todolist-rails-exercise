@@ -1,0 +1,33 @@
+<% if @todolist.errors.present? %>
+  <ul>
+        <% @todolist.errors.each do |error, message|%>
+          <li> <%= "#{error.capitalize}  #{message}" %></li>
+        <% end %>
+  </ul>
+<% end%>
+
+
+<%= form_for @todolist do |f| %>
+
+	<%= f.label :title, "Title" %>
+	<%= f.text_field :title %>
+
+	<br>
+	<br>
+
+	<%= f.label :duedate, "Duedate" %>
+	<%= f.text_field :duedate %>
+
+	<br>
+	<br>
+
+	<%= f.label :description, "Description" %>
+	<%= f.text_area :description %>
+
+	<br>
+	<br>
+
+	<%= f.submit %>
+
+
+<% end %>
