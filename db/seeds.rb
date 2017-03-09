@@ -38,5 +38,11 @@ todolist_list = [
 
 todolist_list.each do |list|
 
-	Todolist.create( :title => list["title"] , :duedate => list["duedate"] , :description => list["description"] )
+	 Todolist.create( :title => list["title"] , :duedate => list["duedate"] , :description => list["description"] )
+
+
 end
+
+
+
+
